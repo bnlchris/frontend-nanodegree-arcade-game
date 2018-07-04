@@ -56,18 +56,27 @@ class Player {
 
             case "left":
                 this.x = this.x - 100;
+                if (this.x < 0) {
+                    this.x = 0;
+                }
                 break;
 
             case "up":
-                this.y = this.y - 80;
+                this.y = this.y - 82;
                 break;
 
             case "right":
                 this.x = this.x + 100;
+                if (this.x > 400) {
+                    this.x = 400;
+                }
                 break;
 
             case "down":
-                this.y = this.y + 80;
+                this.y = this.y + 82;
+                if (this.y > 400) {
+                    this.y = 400;
+                }
                 break;    
         }
     }
