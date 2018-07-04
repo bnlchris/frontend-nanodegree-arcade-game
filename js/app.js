@@ -50,16 +50,18 @@ class Player {
 
 
 // Now instantiate your objects.
+const enemyOne = new Enemy(10, 50, 10);
 // Place all enemy objects in an array called allEnemies
-const allEnemies = [];
+const allEnemies = [enemyOne];
+
 // Place the player object in a variable called player
-const player = new Player(10, 10);
+const player = new Player(205, 320);
 
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    const allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
