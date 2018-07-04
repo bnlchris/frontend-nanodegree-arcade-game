@@ -47,8 +47,29 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
-    handleInput() {
+    /* Using the switch statement, the handleInput method
+    listens for the respective strings of the
+    keyup-eventlistener
+    */
+    handleInput(event) {
+        switch(event) {
 
+            case "left":
+                this.x = this.x - 100;
+                break;
+
+            case "up":
+                this.y = this.y - 80;
+                break;
+
+            case "right":
+                this.x = this.x + 100;
+                break;
+
+            case "down":
+                this.y = this.y + 80;
+                break;    
+        }
     }
 }
 
@@ -58,7 +79,7 @@ class Player {
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
 
-const enemyOne = new Enemy(10, 60, 10);
+const enemyOne = new Enemy(10, 60, 30);
 allEnemies.push(enemyOne);
 
 // Place the player object in a variable called player
