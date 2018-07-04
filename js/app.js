@@ -56,7 +56,7 @@ class Player {
 
             case "left":
                 this.x = this.x - 100;
-                if (this.x < 0) {
+                if (this.x < 0) { // prevents the player from falling over the edge
                     this.x = 0;
                 }
                 break;
@@ -81,7 +81,6 @@ class Player {
         }
     }
 }
-
 
 // Now instantiate your objects.
 
