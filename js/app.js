@@ -9,11 +9,15 @@ class Enemy {
         this.sprite = "images/enemy-bug.png";
         this.x = x;
         this.y = y;
+        this.speed = speed;
        } 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
         update(dt) {
-
+            this.x = this.x + this.speed * dt;
+            if (this.x > 505) {
+                this.x = -100;
+            }
         }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -50,12 +54,15 @@ class Player {
 
 
 // Now instantiate your objects.
-const enemyOne = new Enemy(10, 50, 10);
+
 // Place all enemy objects in an array called allEnemies
-const allEnemies = [enemyOne];
+const allEnemies = [];
+
+const enemyOne = new Enemy(10, 60, 10);
+allEnemies.push(enemyOne);
 
 // Place the player object in a variable called player
-const player = new Player(205, 320);
+const player = new Player(203, 320);
 
 
 // This listens for key presses and sends the keys to your
