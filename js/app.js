@@ -18,6 +18,17 @@ class Enemy {
             if (this.x > 505) {
                 this.x = -100;
             }
+
+// Do player and enemies collide?
+
+            if (this.x < player.x + 70 &&
+                this.x + 20 > player.x - 70 &&
+                this.y < player.y + 50 &&
+                this.y + 50 > player.y) {
+                    player.x = 203;
+                    player.y = 320;
+                }
+
         }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -47,6 +58,7 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
+  
     /* Using the switch statement, the handleInput method
     listens for the respective strings of the
     keyup-eventlistener
@@ -63,6 +75,10 @@ class Player {
 
             case "up":
                 this.y = this.y - 82;
+                if (this.y < 10) { // sets player back to start
+                    this.x = 203;
+                    this.y = 320;
+                }
                 break;
 
             case "right":
@@ -88,7 +104,8 @@ class Player {
 const allEnemies = [];
 
 const enemyOne = new Enemy(10, 60, 30);
-allEnemies.push(enemyOne);
+const enemyTwo = new Enemy(10, 145, 60);
+allEnemies.push(enemyOne, enemyTwo);
 
 // Place the player object in a variable called player
 const player = new Player(203, 320);
