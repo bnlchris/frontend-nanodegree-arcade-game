@@ -76,6 +76,7 @@ class Player {
             case "up":
                 this.y = this.y - 82;
                 if (this.y < 10) { // sets player back to start
+                    wins++;
                     this.x = 203;
                     this.y = 320;
                 }
@@ -123,3 +124,23 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// This function is referred to when player hits the star
+function reset() {
+    player.x = 203;
+    player.y = 320;
+}
+
+// Sets the event listener for reset to the star image
+let repeatButton = document.querySelector(".again");
+repeatButton.addEventListener("click", reset());
+
+
+// variable to count number of times player reaches the water
+let wins = 0;
+
+// This function will be fired when player has reached the water five times
+function winner() {
+    showModal();
+    reset();
+}
