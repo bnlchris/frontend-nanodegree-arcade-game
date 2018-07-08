@@ -1,6 +1,21 @@
-frontend-nanodegree-arcade-game
-===============================
+# Udacity's Classic Arcade Game Frogger
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## About the project
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+This is the fourth project in Udacity's Front End Nanodegree Program. Students were obliged to show their proficieny in working with object-oriented programming (JavaScript).
+
+To prove this, one must complete a classic arcade game, Frogger.
+
+## How to play?
+
+The player has to reach the water five times. But beware of the ugly bugs crossing the street from left to right. When touching one of them, the player loses one of three lives (the hearts above).
+
+## My contributions
+
+As a Udacity student, I had to complete the class of the bugs and create a new player class from scratch. I also had to write the code for the collision detection and the other functions ruling the game.
+
+## Sources
+
+Code to start with: [Udactiy](https://de.udacity.com/)
+Collision condition: [MDN web docs](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
+Modals: [w3schools.com](https://www.w3schools.com/howto/howto_css_modals.asp)
