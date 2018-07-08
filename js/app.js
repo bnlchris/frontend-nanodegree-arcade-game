@@ -86,6 +86,10 @@ class Player {
                     wins++;
                     this.x = 203;
                     this.y = 320;
+                    // checks if the player has von the game
+                    if (wins === 5) {
+                        winner();
+                    }
                 }
                 break;
 
@@ -132,23 +136,28 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-// This function is referred to when the player hits the star
-function reset() {
-    player.x = 203;
-    player.y = 320;
-    wins = 0;
-    hits = 0;
-}
-
-// Sets the event listener for reset to the star image
-let repeatButton = document.querySelector(".again");
-repeatButton.addEventListener("click", reset);
-
 // variable to count number of times player reaches the water
 let wins = 0;
 
 // This variable takes care of the number of times a collision has happened.
 let hits = 0;
+
+// This function is referred to when the player hits the star
+function reset() {
+    /*player.x = 203;
+    player.y = 320;
+    wins = 0;
+    hits = 0;
+    document.querySelector(".heart3").className -= " hide";
+    document.querySelector(".heart2").className -= " hide";
+    document.querySelector(".heart1").className -= " hide";*/
+    // reload page to starting position
+    location.reload(true);
+}
+
+// Sets the event listener for reset to the star image
+let repeatButton = document.querySelector(".again");
+repeatButton.addEventListener("click", reset);
 
 // Takes care of the number of heart icons
 function lifeLost() {
@@ -159,18 +168,39 @@ function lifeLost() {
     } else if (hits === 3) {
         document.querySelector(".heart1").className += " hide";
     } else {
-        document.getElementsByClassName("life").removeClass("hide");
+        document.querySelector(".heart3").className -= " hide";
+        document.querySelector(".heart2").className -= " hide";
+        document.querySelector(".heart1").className -= " hide";
     }        
 }
 
+//Get the modals
+const modalWin = document.getElementById('modalWin');
+const modalLose = document.getElementById('modalLose');
+
 // After three hits the game is over
 function gameOver() {
-    // show GameOver modal
-    reset();
+    // show loser modal
+    modalLose.style.display = "block";
 }
 
-// This function will be fired when player has reached the water five times
+// This function will be fired when the player has reached the water five times
 function winner() {
     // show winner modal
-    reset();
+    modalWin.style.display = "block";
+}
+
+// When the user clicks anywhere outside of a modal, close it
+window.onclick = function (event) {
+    if (event.target == modalWin) {
+        reset();
+        modalWin.style.display = "none";
+    }
+}
+
+window.onclick = function (event) {
+    if (event.target == modalLose) {
+        reset();
+        modalLose.style.display = "none";
+    }
 }
