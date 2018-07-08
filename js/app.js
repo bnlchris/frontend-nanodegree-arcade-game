@@ -27,6 +27,13 @@ class Enemy {
                 this.y + 50 > player.y) {
                     player.x = 203;
                     player.y = 320;
+                    hits++;
+                    // player looses one life
+                    lifeLost();
+                    // checks if game is over
+                    if (hits === 3) {
+                        gameOver();
+                    }
                 }
 
         }
@@ -125,22 +132,45 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-// This function is referred to when player hits the star
+// This function is referred to when the player hits the star
 function reset() {
     player.x = 203;
     player.y = 320;
+    wins = 0;
+    hits = 0;
 }
 
 // Sets the event listener for reset to the star image
 let repeatButton = document.querySelector(".again");
-repeatButton.addEventListener("click", reset());
-
+repeatButton.addEventListener("click", reset);
 
 // variable to count number of times player reaches the water
 let wins = 0;
 
+// This variable takes care of the number of times a collision has happened.
+let hits = 0;
+
+// Takes care of the number of heart icons
+function lifeLost() {
+    if (hits === 1) {
+        document.querySelector(".heart3").className += " hide";
+    } else if (hits === 2) {
+        document.querySelector(".heart2").className += " hide";
+    } else if (hits === 3) {
+        document.querySelector(".heart1").className += " hide";
+    } else {
+        document.getElementsByClassName("life").removeClass("hide");
+    }        
+}
+
+// After three hits the game is over
+function gameOver() {
+    // show GameOver modal
+    reset();
+}
+
 // This function will be fired when player has reached the water five times
 function winner() {
-    showModal();
+    // show winner modal
     reset();
 }
