@@ -17,5 +17,7 @@ As a Udacity student, I had to complete the class of the bugs and create a new p
 ## Sources
 
 Code to start with: [Udactiy](https://de.udacity.com/)
+
 Collision condition: [MDN web docs](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
+
 Modals: [w3schools.com](https://www.w3schools.com/howto/howto_css_modals.asp)

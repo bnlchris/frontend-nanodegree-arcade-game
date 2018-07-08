@@ -58,7 +58,10 @@ class Player {
     }
 
     update() {
-
+        // checks if the player has won by reaching the water five times
+        if (wins === 5) {
+            winner();
+        }
     }
 
     render() {
@@ -86,10 +89,6 @@ class Player {
                     wins++;
                     this.x = 203;
                     this.y = 320;
-                    // checks if the player has von the game
-                    if (wins === 5) {
-                        winner();
-                    }
                 }
                 break;
 
@@ -194,13 +193,13 @@ function winner() {
 window.onclick = function (event) {
     if (event.target == modalWin) {
         reset();
-        modalWin.style.display = "none";
+        //modalWin.style.display = "none";
     }
 }
 
 window.onclick = function (event) {
     if (event.target == modalLose) {
         reset();
-        modalLose.style.display = "none";
+        //modalLose.style.display = "none";
     }
 }
