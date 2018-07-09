@@ -190,16 +190,9 @@ function winner() {
 }
 
 // When the user clicks anywhere outside of a modal, close it
-window.onclick = function (event) {
-    if (event.target == modalWin) {
-        reset();
-        //modalWin.style.display = "none";
-    }
-}
 
 window.onclick = function (event) {
-    if (event.target == modalLose) {
-        reset();
-        //modalLose.style.display = "none";
+    if (event.target == modalLose || event.target == modalWin) {
+        reset(); 
     }
 }
