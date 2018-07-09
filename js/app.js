@@ -114,9 +114,14 @@ class Player {
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
 
+
+// Create bugs
 const enemyOne = new Enemy(10, 60, 30);
 const enemyTwo = new Enemy(10, 145, 60);
-allEnemies.push(enemyOne, enemyTwo);
+const enemyThree = new Enemy(-100, 60, 75);
+const enemyFour = new Enemy(-100, 235, 55);
+
+allEnemies.push(enemyOne, enemyTwo, enemyThree, enemyFour);
 
 // Place the player object in a variable called player
 const player = new Player(203, 320);
