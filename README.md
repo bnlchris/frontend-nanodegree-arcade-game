@@ -12,9 +12,9 @@ The player has to reach the water five times. But beware of the ugly bugs crossi
 
 ## How do you load the game?
 
-You can either play the game online, using this [version on Github](https://improvingsoftware.com/2011/06/27/5-best-practices-for-commenting-your-code/).
+You can either play the game online, using this [version on Github](https://bnlchris.github.io/frontend-nanodegree-arcade-game/).
 
-If you want to play this game locally, feel free to download this folder. Clone the project with (https://github.com/bnlchris/frontend-nanodegree-arcade-game.git). Then, start the game by opening index.html
+If you want to play this game locally, feel free to download this folder. Clone the project with (https://github.com/bnlchris/frontend-nanodegree-arcade-game.git). Then, start the game by opening index.html.
 
 ## My contributions
 
